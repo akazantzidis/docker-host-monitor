@@ -1,0 +1,33 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.pyc
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# logs
+logs/
+*.log
+
+# npm
+node_modules
+
+# macos
+.DS_Store
+
+# binaries
+bin
+
+
+*pwd*
+*pass*
+*password*
+*.key
+*.pem

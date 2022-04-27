@@ -1,0 +1,117 @@
+---
+version: '3'
+
+volumes:
+  prometheus_data: {}
+  grafana_data: {}
+  # Below is needed if you use LetsEncrypt certificate.
+  #traefik-data: {}
+
+services:
+
+  alert-manager:
+    image: prom/alertmanager
+    volumes:
+      - ./alertmanager:/etc/alertmanager/
+    command:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
+    ports:
+      - 9093
+    restart: unless-stopped
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    ports:
+      - 8080
+    restart: unless-stopped
+
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    ports:
+      - 9100
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - 9090
+    restart: unless-stopped
+
+  grafana:
+    labels:
+      # Below variables should be set at .env file included.
+      # Beware "`" are needed in docker-compose but not in export.
+      - "traefik.enable=true"
+      - "traefik.http.routers.grafana.entryPoints=port80"
+      - "traefik.http.routers.grafana.rule=${PROJECT_DOMAIN}"
+      - "traefik.http.middlewares.grafana-redirect.redirectScheme.scheme=https"
+      - "traefik.http.middlewares.grafana-redirect.redirectScheme.permanent=true"
+      - "traefik.http.routers.grafana.middlewares=grafana-redirect"
+      # SSL endpoint
+      - "traefik.http.routers.grafana-ssl.entryPoints=port443"
+      - "traefik.http.routers.grafana-ssl.rule=${PROJECT_DOMAIN}"
+      - "traefik.http.routers.grafana-ssl.tls=true"
+      # The below is needed if you use LetsEncrypt certificate.
+      #- "traefik.http.routers.grafana-ssl.tls.certResolver=le-ssl"
+      - "traefik.http.routers.grafana-ssl.service=grafana-ssl"
+      - "traefik.http.services.grafana-ssl.loadBalancer.server.port=3000"
+    environment:
+      # Below should be set at .env file included.
+      - GF_SERVER_ROOT_URL=https://${SERVER_DOMAIN}
+      - GF_SERVER_DOMAIN=${SERVER_DOMAIN}
+      - GF_SECURITY_ADMIN_USER=${ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=${ALLOW_SIGN_UP}
+      - GF_PATHS_PROVISIONING=${PATHS_PROVISIONING}
+    image: grafana/grafana
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning/
+      - grafana_data:/var/lib/grafana
+    ports:
+      - 3000
+    restart: unless-stopped
+
+  traefik:
+    image: traefik:v2.6
+    volumes:
+      # Below is needed if you use LetsEncrypt certificate.
+      #- traefik-data:/letsencrypt/
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "80:80"
+      - "443:443"
+      # Expose port below only if you need access to the Traefik API.
+      #- "8080:8080"
+    command:
+      # Below is needed if api(port 8080) needs to be exposed.
+      #- "--api=true"
+      #- "--log.level=DEBUG"
+      - "--providers.docker=true"
+      - "--entryPoints.port443.address=:443"
+      - "--entryPoints.port80.address=:80"
+      - "--providers.docker.exposedbydefault=false"
+      # Below are needed if you use LetsEncrypt certificate.
+      #- "--certificatesResolvers.le-ssl.acme.tlsChallenge=true"
+      #- "--certificatesResolvers.le-ssl.acme.email=${PROJECT_EMAIL_ADDRESS}"
+      #- "--certificatesResolvers.le-ssl.acme.storage=/letsencrypt/acme.json"
