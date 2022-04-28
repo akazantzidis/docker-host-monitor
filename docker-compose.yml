@@ -99,8 +99,8 @@ services:
       #- traefik-data:/letsencrypt/
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - "80:80"
-      - "443:443"
+      - "8880:80"
+      - "4443:443"
       # Expose port below only if you need access to the Traefik API.
       #- "8080:8080"
     command:
