@@ -66,6 +66,7 @@ services:
       - "traefik.http.routers.grafana.entryPoints=port80"
       - "traefik.http.routers.grafana.rule=${PROJECT_DOMAIN}"
       - "traefik.http.middlewares.grafana-redirect.redirectScheme.scheme=https"
+      - "traefik.http.middlewares.grafana-redirect.redirectScheme.port=4443"
       - "traefik.http.middlewares.grafana-redirect.redirectScheme.permanent=true"
       - "traefik.http.routers.grafana.middlewares=grafana-redirect"
       # SSL endpoint
@@ -100,7 +101,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8880:80"
-      - "4443:443"
+      - "4443:4443"
       # Expose port below only if you need access to the Traefik API.
       #- "8080:8080"
     command:
@@ -108,7 +109,7 @@ services:
       #- "--api=true"
       #- "--log.level=DEBUG"
       - "--providers.docker=true"
-      - "--entryPoints.port443.address=:443"
+      - "--entryPoints.port443.address=:4443"
       - "--entryPoints.port80.address=:80"
       - "--providers.docker.exposedbydefault=false"
       # Below are needed if you use LetsEncrypt certificate.
