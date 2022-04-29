@@ -15,7 +15,7 @@
           "limit":100,
           "matchAny":false,
           "tags":[
-
+            
           ],
           "type":"dashboard"
         },
@@ -28,9 +28,9 @@
   "fiscalYearStartMonth":0,
   "gnetId":893,
   "graphTooltip":1,
-  "iteration":1651060188590,
+  "iteration":1651241510879,
   "links":[
-
+    
   ],
   "liveNow":false,
   "panels":[
@@ -72,7 +72,7 @@
           "unit":"s"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -83,7 +83,7 @@
       },
       "id":24,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -100,7 +100,7 @@
         },
         "textMode":"auto"
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -155,7 +155,7 @@
           "unit":"none"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -166,7 +166,7 @@
       },
       "id":31,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -183,7 +183,7 @@
         },
         "textMode":"auto"
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "expr":"count(rate(container_last_seen{name=~\".+\"}[$interval]))",
@@ -239,7 +239,7 @@
           "unit":"percentunit"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -250,7 +250,7 @@
       },
       "id":26,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -265,7 +265,7 @@
         "showThresholdLabels":false,
         "showThresholdMarkers":true
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -326,7 +326,7 @@
           "unit":"percent"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -337,7 +337,7 @@
       },
       "id":25,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -352,7 +352,7 @@
         "showThresholdLabels":false,
         "showThresholdMarkers":true
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -411,7 +411,7 @@
           "unit":"decbytes"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -422,7 +422,7 @@
       },
       "id":30,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -437,7 +437,7 @@
         "showThresholdLabels":false,
         "showThresholdMarkers":true
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -497,7 +497,7 @@
           "unit":"percentunit"
         },
         "overrides":[
-
+          
         ]
       },
       "gridPos":{
@@ -508,7 +508,7 @@
       },
       "id":27,
       "links":[
-
+        
       ],
       "maxDataPoints":100,
       "options":{
@@ -525,7 +525,7 @@
         },
         "textMode":"auto"
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -557,7 +557,7 @@
       "fill":1,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":6,
@@ -579,19 +579,19 @@
       "lines":true,
       "linewidth":1,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":1,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":false,
@@ -614,10 +614,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"Network Traffic",
       "tooltip":{
@@ -631,7 +631,7 @@
         "mode":"time",
         "show":false,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -666,7 +666,7 @@
       "fill":1,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":6,
@@ -688,19 +688,19 @@
       "lines":true,
       "linewidth":1,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":true,
@@ -753,10 +753,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"CPU Usage",
       "tooltip":{
@@ -770,7 +770,7 @@
         "mode":"time",
         "show":false,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -809,7 +809,7 @@
             },
             "reducer":{
               "params":[
-
+                
               ],
               "type":"avg"
             },
@@ -865,7 +865,7 @@
             }
           },
           "mappings":[
-
+            
           ],
           "max":1.5,
           "thresholds":{
@@ -906,12 +906,12 @@
       },
       "id":28,
       "links":[
-
+        
       ],
       "options":{
         "legend":{
           "calcs":[
-
+            
           ],
           "displayMode":"hidden",
           "placement":"bottom"
@@ -959,7 +959,7 @@
             },
             "reducer":{
               "params":[
-
+                
               ],
               "type":"avg"
             },
@@ -1018,10 +1018,9 @@
             }
           },
           "mappings":[
-
+            
           ],
-          "max":1000000000000,
-          "min":0,
+          "max":220000000000,
           "thresholds":{
             "mode":"absolute",
             "steps":[
@@ -1031,7 +1030,7 @@
               },
               {
                 "color":"red",
-                "value":850000000000
+                "value":180000000000
               }
             ]
           },
@@ -1120,19 +1119,19 @@
       },
       "id":13,
       "links":[
-
+        
       ],
       "options":{
         "legend":{
           "calcs":[
-
+            
           ],
           "displayMode":"hidden",
           "placement":"bottom"
         },
         "tooltip":{
-          "mode":"multi",
-          "sort":"none"
+          "mode":"none",
+          "sort":"asc"
         }
       },
       "pluginVersion":"8.5.0",
@@ -1172,7 +1171,7 @@
             },
             "reducer":{
               "params":[
-
+                
               ],
               "type":"avg"
             },
@@ -1212,6 +1211,9 @@
               "viz":false
             },
             "lineInterpolation":"linear",
+            "lineStyle":{
+              "fill":"solid"
+            },
             "lineWidth":1,
             "pointSize":5,
             "scaleDistribution":{
@@ -1228,9 +1230,9 @@
             }
           },
           "mappings":[
-
+            
           ],
-          "max":32000000000,
+          "max":36000000000,
           "min":0,
           "thresholds":{
             "mode":"absolute",
@@ -1241,7 +1243,7 @@
               },
               {
                 "color":"red",
-                "value":30000000000
+                "value":32000000000
               }
             ]
           },
@@ -1266,7 +1268,7 @@
           {
             "matcher":{
               "id":"byName",
-              "options":"Unavailable Memory"
+              "options":"Consumed Memory"
             },
             "properties":[
               {
@@ -1300,18 +1302,18 @@
       },
       "id":20,
       "links":[
-
+        
       ],
       "options":{
         "legend":{
           "calcs":[
-
+            
           ],
           "displayMode":"hidden",
           "placement":"bottom"
         },
         "tooltip":{
-          "mode":"multi",
+          "mode":"single",
           "sort":"none"
         }
       },
@@ -1407,7 +1409,7 @@
             "uid":"PBFA97CFB590B2093"
           },
           "expr":"node_memory_MemAvailable_bytes",
-          "hide":false,
+          "hide":true,
           "intervalFactor":2,
           "legendFormat":"Available Memory",
           "refId":"H",
@@ -1418,10 +1420,12 @@
             "type":"prometheus",
             "uid":"PBFA97CFB590B2093"
           },
+          "editorMode":"code",
           "expr":"node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes",
           "hide":false,
           "intervalFactor":2,
-          "legendFormat":"Unavailable Memory",
+          "legendFormat":"Consumed Memory",
+          "range":true,
           "refId":"G",
           "step":600
         },
@@ -1552,7 +1556,7 @@
             }
           },
           "mappings":[
-
+            
           ],
           "thresholds":{
             "mode":"absolute",
@@ -1622,12 +1626,12 @@
       },
       "id":3,
       "links":[
-
+        
       ],
       "options":{
         "legend":{
           "calcs":[
-
+            
           ],
           "displayMode":"hidden",
           "placement":"bottom"
@@ -1671,7 +1675,7 @@
     },
     {
       "aliasColors":{
-
+        
       },
       "bars":false,
       "dashLength":10,
@@ -1685,7 +1689,7 @@
       "fill":1,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":7,
@@ -1709,19 +1713,19 @@
       "lines":true,
       "linewidth":2,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":false,
@@ -1744,10 +1748,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"Received Network Traffic per Container",
       "tooltip":{
@@ -1761,7 +1765,7 @@
         "mode":"time",
         "show":true,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -1782,7 +1786,7 @@
     },
     {
       "aliasColors":{
-
+        
       },
       "bars":false,
       "dashLength":10,
@@ -1796,7 +1800,7 @@
       "fill":1,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":7,
@@ -1822,19 +1826,19 @@
       "lines":true,
       "linewidth":2,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":false,
@@ -1857,10 +1861,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"Sent Network Traffic per Container",
       "tooltip":{
@@ -1874,7 +1878,7 @@
         "mode":"time",
         "show":true,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -1899,7 +1903,7 @@
     },
     {
       "aliasColors":{
-
+        
       },
       "bars":false,
       "dashLength":10,
@@ -1913,7 +1917,7 @@
       "fill":5,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":7,
@@ -1937,19 +1941,19 @@
       "lines":true,
       "linewidth":1,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":true,
@@ -1967,10 +1971,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"CPU Usage per Container",
       "tooltip":{
@@ -1984,7 +1988,7 @@
         "mode":"time",
         "show":true,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -2006,7 +2010,7 @@
     },
     {
       "aliasColors":{
-
+        
       },
       "bars":false,
       "dashLength":10,
@@ -2020,7 +2024,7 @@
       "fill":3,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":7,
@@ -2044,19 +2048,19 @@
       "lines":true,
       "linewidth":2,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":true,
@@ -2080,10 +2084,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"Memory Swap per Container",
       "tooltip":{
@@ -2097,7 +2101,7 @@
         "mode":"time",
         "show":true,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -2119,7 +2123,7 @@
     },
     {
       "aliasColors":{
-
+        
       },
       "bars":false,
       "dashLength":10,
@@ -2133,7 +2137,7 @@
       "fill":3,
       "fillGradient":0,
       "grid":{
-
+        
       },
       "gridPos":{
         "h":7,
@@ -2157,19 +2161,19 @@
       "lines":true,
       "linewidth":2,
       "links":[
-
+        
       ],
       "nullPointMode":"null as zero",
       "options":{
         "alertThreshold":true
       },
       "percentage":false,
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "pointradius":5,
       "points":false,
       "renderer":"flot",
       "seriesOverrides":[
-
+        
       ],
       "spaceLength":10,
       "stack":true,
@@ -2201,10 +2205,10 @@
         }
       ],
       "thresholds":[
-
+        
       ],
       "timeRegions":[
-
+        
       ],
       "title":"Memory Usage per Container",
       "tooltip":{
@@ -2218,7 +2222,7 @@
         "mode":"time",
         "show":true,
         "values":[
-
+          
         ]
       },
       "yaxes":[
@@ -2254,7 +2258,7 @@
             "inspect":false
           },
           "mappings":[
-
+            
           ],
           "thresholds":{
             "mode":"absolute",
@@ -2388,7 +2392,7 @@
       },
       "id":39,
       "links":[
-
+        
       ],
       "options":{
         "footer":{
@@ -2400,7 +2404,7 @@
         },
         "showHeader":true
       },
-      "pluginVersion":"8.5.0",
+      "pluginVersion":"8.5.1",
       "targets":[
         {
           "datasource":{
@@ -2444,7 +2448,7 @@
           "id":"merge",
           "options":{
             "reducers":[
-
+              
             ]
           }
         }
@@ -2452,11 +2456,11 @@
       "type":"table"
     }
   ],
-  "refresh":"",
+  "refresh":"10s",
   "schemaVersion":36,
   "style":"dark",
   "tags":[
-
+    
   ],
   "templating":{
     "list":[
@@ -2482,7 +2486,7 @@
         "multi":true,
         "name":"containergroup",
         "options":[
-
+          
         ],
         "query":{
           "query":"label_values(container_group)",
@@ -2616,7 +2620,7 @@
         "multi":true,
         "name":"server",
         "options":[
-
+          
         ],
         "query":{
           "query":"label_values(node_boot_time_seconds, instance)",
@@ -2662,6 +2666,6 @@
   "timezone":"browser",
   "title":"Docker and system monitoring",
   "uid":"003GCLw7z",
-  "version":9,
+  "version":1,
   "weekStart":""
 }
