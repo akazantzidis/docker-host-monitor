@@ -122,13 +122,13 @@ groups:
 
       # Alert threshold depends on nature of application.
       - alert: HostContextSwitching
-        expr: (rate(node_context_switches_total[5m])) / (count without(cpu, mode) (node_cpu_seconds_total{mode="idle"})) > 1500
+        expr: (rate(node_context_switches_total[5m])) / (count without(cpu, mode) (node_cpu_seconds_total{mode="idle"})) > 3000
         for: 0m
         labels:
           severity: warning
         annotations:
           summary: Host context switching (instance {{ $labels.instance }})
-          description: "Context switching is growing on node (> 1500 / s)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
+          description: "Context switching is growing on node (> 3000 / s)\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
 
       - alert: HostSwapIsFillingUp
         expr: (1 - (node_memory_SwapFree_bytes / node_memory_SwapTotal_bytes)) * 100 > 80
@@ -239,7 +239,7 @@ groups:
           description: "Container Memory usage is above 80%\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}"
 
       - alert: ContainerVolumeUsage
-        expr: (1 - (sum(container_fs_inodes_free{name!=""}) BY (instance) / sum(container_fs_inodes_total) BY (instance))) * 100 > 80
+        expr: (1 - (sum(container_fs_inodes_free{name!="",instance !="cadvisor:8080"}) BY (instance) / sum(container_fs_inodes_total) BY (instance))) * 100 > 80
         for: 2m
         labels:
           severity: warning
