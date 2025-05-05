@@ -93,7 +93,7 @@ services:
     restart: unless-stopped
 
   traefik:
-    image: traefik:v3.2
+    image: traefik:v3.4
     volumes:
       # Below is needed if you use LetsEncrypt certificate.
       #- traefik-data:/letsencrypt/
